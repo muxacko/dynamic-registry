@@ -1,3 +1,5 @@
+from sqlalchemy.engine import Engine
+
 from dataclasses import Meta
 from registry import Registry
 
@@ -13,6 +15,12 @@ class World(object):
 
 def test_init_registry(registry: Registry):
     assert registry is not None
+
+
+def test_create_table_from_meta(db: Engine, registry: Registry):
+    meta = Meta(name='Hello', origin=Hello)
+    meta.attributes['value'] = Meta.STRING
+    assert False
 
 
 def test_type_to_meta(registry: Registry):

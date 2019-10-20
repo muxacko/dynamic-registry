@@ -3,7 +3,6 @@ from typing import Type
 
 from flask import Flask
 from flask_cors import CORS
-from
 from sqlalchemy.orm import Session
 
 from dataclasses import Meta
@@ -36,7 +35,7 @@ class Registry(object):
         meta = self._metas[type(obj).__name__]
         # сконструтировать модель или сделать sql на инсерт
         # предварительно создать структуру в БД
-        self._session.
+        # self._session.
 
     def _init_entity_storage(self, meta: Meta):
         # сконструировать Table или модель...
